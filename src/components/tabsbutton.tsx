@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import TabBeta from "./tab-beta";
 import TabWip from "./tab-wip";
 import InternalApp from "./internalapp";
-import Image from "next/image";
 
 const TABS = [
   { label: "Beta" },

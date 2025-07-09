@@ -64,7 +64,7 @@ function renderStyledTitle(title: string) {
 export default function InternalApp() {
   return (
     <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-2 mt-8 items-stretch justify-center">
-      {cards.map((card, idx) => (
+      {cards.map((card) => (
         <div
           key={card.title}
           className={`relative flex flex-col rounded-[12px] shadow-lg w-full h-full p-8 bg-gradient-to-br ${card.gradient}`}

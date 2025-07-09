@@ -47,7 +47,7 @@ export default function Home() {
         alt="Background graphic center"
         width={700}
         height={700}
-        className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/3 z-0 w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] md:w-[1100px] md:h-[1800px] pointer-events-none select-none"
+        className="absolute left-1/2 top-0 -translate-x-1/2 z-0 w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] md:w-[1100px] md:h-[1100px] pointer-events-none select-none object-contain"
         priority
       />
       {/* Right background image (bg-5.png) */}

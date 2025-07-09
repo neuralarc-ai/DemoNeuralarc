@@ -45,7 +45,7 @@ export default function TabWorkInProgress() {
   return (
     <div>
       <div className="w-full flex flex-col gap-8 mt-12 sm:flex-row sm:gap-8 items-center justify-center mx-2">
-        {cards.map((card, idx) => (
+        {cards.map((card) => (
           <div
             key={card.title}
             className="relative flex flex-col justify-between rounded-[12px] h-full"
@@ -79,7 +79,7 @@ export default function TabWorkInProgress() {
         ))}
       </div>
       <div className="w-full flex flex-col gap-4 mt-8 sm:flex-row sm:gap-8 items-center justify-center mx-4">
-        {cards2.map((card, idx) => (
+        {cards2.map((card) => (
           <div
             key={card.title}
             className="relative flex flex-col justify-between rounded-[12px] h-full flex-1 min-w-0"

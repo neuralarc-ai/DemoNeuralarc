@@ -1,11 +1,16 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, RefObject } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [pin, setPin] = useState(["", "", "", ""]);
   const [error, setError] = useState("");
-  const inputs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+  const inputs: RefObject<HTMLInputElement | null>[] = [
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null),
+    useRef<HTMLInputElement>(null)
+  ];
   const router = useRouter();
 
   const handleChange = (idx: number, value: string) => {
@@ -15,7 +20,7 @@ export default function Login() {
     setPin(newPin);
     setError("");
     if (value && idx < 3) {
-      (inputs[idx + 1].current as any)?.focus();
+      inputs[idx + 1].current?.focus();
     }
     if (newPin.every((d) => d.length === 1)) {
       if (newPin.join("") === "1111") {
@@ -24,7 +29,7 @@ export default function Login() {
       } else {
         setError("Incorrect PIN");
         setPin(["", "", "", ""]);
-        (inputs[0].current as any)?.focus();
+        inputs[0].current?.focus();
       }
     }
   };
