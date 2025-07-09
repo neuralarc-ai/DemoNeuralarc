@@ -27,7 +27,7 @@ const cards = [
 const cards2 = [
   {
     bg: "#DAD5BE",
-    title: "LoanSense AI:",
+    title: "LoanSense AI",
     description:
       "An AI-powered loan agent that swiftly analyzes commercial loan applications, ensuring accurate risk assessment and accelerating approval decisions.",
     url: "https://loanagent.neuralarc.ai/",
