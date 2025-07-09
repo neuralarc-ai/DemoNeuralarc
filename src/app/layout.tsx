@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "../components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +25,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&display=swap" rel="stylesheet" />
+      </head>
+      <body style={{ fontFamily: "Fustat, Arial, Helvetica, sans-serif" }}>
+        <div className="pb-2">
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );
