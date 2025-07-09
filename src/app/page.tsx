@@ -1,16 +1,28 @@
 "use client";
 import Image from "next/image";
 import TabsButton from "../components/tabsbutton";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
   const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   useEffect(() => {
-    if (typeof window !== "undefined" && localStorage.getItem("auth") !== "true") {
-      router.replace("/auth/login");
+    if (typeof window !== "undefined") {
+      const auth = localStorage.getItem("auth");
+      setIsAuthenticated(auth === "true");
+      if (auth !== "true") {
+        router.replace("/auth/login");
+      }
     }
   }, [router]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("auth");
+    setIsAuthenticated(false);
+    router.replace("/auth/login");
+  };
 
   return (
     <div className="w-full flex flex-col justify-center relative min-h-screen overflow-hidden max-w-[1920px] mx-auto px-4 ">
@@ -60,7 +72,7 @@ export default function Home() {
         priority
       />
       {/* Header with logo */}
-      <header className="w-full flex items-start pt-8 pl-8 sm:pt-12 sm:pl-12 relative z-10">
+      <header className="w-full flex items-center justify-between pt-8 pl-8 pr-8 sm:pt-12 sm:pl-12 sm:pr-12 relative z-10">
         <Image
           src="/logo.png"
           alt="NeuralArc Logo"
@@ -69,6 +81,23 @@ export default function Home() {
           className="w-[140px] h-[44px] sm:w-[193px] sm:h-[60px] opacity-100"
           priority
         />
+        {isAuthenticated && (
+          <button
+            onClick={handleLogout}
+            className="flex items-center justify-center p-2 rounded-lg hover:bg-white/10 transition relative group"
+            aria-label="Logout"
+            title="Logout"
+            style={{ height: '44px' }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-logout">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+              <path d="M9 12h12l-3 -3" />
+              <path d="M18 15l3 -3" />
+            </svg>
+            <span className="absolute left-1/2 top-full -translate-x-1/2 mt-2 px-2 py-1 text-xs bg-black text-white rounded opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap z-50">Logout</span>
+          </button>
+        )}
       </header>
       {/* Spacing between header and tabs */}
       <div className="h-8 sm:h-12" />
