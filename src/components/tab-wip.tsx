@@ -78,37 +78,39 @@ export default function TabWorkInProgress() {
           </div>
         ))}
       </div>
-      <div className="w-full flex flex-col gap-4 mt-8 sm:flex-row sm:gap-8 items-center justify-center mx-4">
-        {cards2.map((card) => (
-          <div
-            key={card.title}
-            className="relative flex flex-col justify-between rounded-[12px] h-full flex-1 min-w-0"
-            style={{
-              background: card.bg,
-              padding: 22,
-              opacity: 1,
-              borderRadius: 12,
-            }}
-          >
-            <div className="w-full h-full rounded-[12px] p-6 sm:p-8" style={{background: '#FFFFFF9E', backdropFilter: 'blur(8px)'}}>
-              <h4 className="font-medium text-[2rem] leading-[43.52px] tracking-[-0.02em] text-black mb-2">
-                {card.title}
-              </h4>
-              <div className="font-normal text-[19.34px] leading-[25.79px] text-[#4A4A4A] mb-8">
-                {card.description}
+      <div className="w-full flex flex-col gap-4 mt-8 sm:flex-row sm:gap-8 items-center justify-center mx-2">
+        <div className={`grid ${cards2.length === 2 ? 'grid-cols-2' : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3'} gap-6 w-full`}>
+          {cards2.map((card) => (
+            <div
+              key={card.title}
+              className="relative flex flex-col  rounded-[12px] h-full min-w-0"
+              style={{
+                background: card.bg,
+                padding: 22,
+                opacity: 1,
+                borderRadius: 12,
+              }}
+            >
+              <div className="w-full h-full rounded-[12px] p-6 sm:p-8" style={{background: '#FFFFFF9E', backdropFilter: 'blur(8px)'}}>
+                <h4 className="font-medium text-[2rem] leading-[43.52px] tracking-[-0.02em] text-black mb-2">
+                  {card.title}
+                </h4>
+                <div className="font-normal text-[19.34px] leading-[25.79px] text-[#4A4A4A] mb-8">
+                  {card.description}
+                </div>
+                <a
+                  href={card.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto px-8 py-3 bg-[#2F2C28] text-white rounded-lg font-medium text-lg shadow-[0_4px_0_0_#C6AEA3] border-b-[3px] border-b-[#C6AEA3] hover:-translate-y-1 transition-all flex items-center gap-2 w-fit"
+                >
+                  Try Now
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24v0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                </a>
               </div>
-              <a
-                href={card.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-auto px-8 py-3 bg-[#2F2C28] text-white rounded-lg font-medium text-lg shadow-[0_4px_0_0_#C6AEA3] border-b-[3px] border-b-[#C6AEA3] hover:-translate-y-1 transition-all flex items-center gap-2 w-fit"
-              >
-                Try Now
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24v0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
-              </a>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
