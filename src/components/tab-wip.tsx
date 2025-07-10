@@ -95,7 +95,7 @@ export default function TabWorkInProgress() {
                 <h4 className="font-medium text-[2rem] leading-[43.52px] tracking-[-0.02em] text-black mb-2">
                   {card.title}
                 </h4>
-                <div className="font-normal text-[19.34px] leading-[25.79px] text-[#4A4A4A] mb-8">
+                <div className="font-normal text-[19.34px] leading-[25.79px] text-[#4A4A4A] mb-8 min-h-[80px]">
                   {card.description}
                 </div>
                 <a

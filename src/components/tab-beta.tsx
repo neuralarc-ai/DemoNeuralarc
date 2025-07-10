@@ -81,7 +81,7 @@ export default function TabBeta() {
               <div className="font-semibold text-[25.79px] leading-[32.24px] tracking-[-0.008em] text-black/70 mb-4">
                 {card.subtitle}
               </div>
-              <div className="font-normal text-[19.34px] leading-[25.79px] text-[#4A4A4A] mb-8">
+              <div className="font-normal text-[19.34px] leading-[25.79px] text-[#4A4A4A] mb-8 min-h-[80px]">
                 {card.description}
               </div>
               <a
@@ -122,7 +122,7 @@ export default function TabBeta() {
               <div className="font-semibold text-[25.79px] leading-[32.24px] tracking-[-0.008em] text-black/70 mb-4">
                 {card.subtitle}
               </div>
-              <div className="font-normal text-[19.34px] leading-[25.79px] text-[#4A4A4A] mb-8">
+              <div className="font-normal text-[19.34px] leading-[25.79px] text-[#4A4A4A] mb-8 min-h-[80px]">
                 {card.description}
               </div>
               <a
