@@ -7,6 +7,7 @@ const cards = [
     description:
       "86/C turns CSV uploads into leads and helps manage the full sales process, from import to conversion, streamlining workflows and boosting efficiency.",
     gradient: "from-[#CDCDCD] to-[#969696]",
+    url: "https://86c.neuralarc.ai/",
   },
   {
     title: "86/F",
@@ -15,6 +16,7 @@ const cards = [
       "86/F is an AI-powered tool that lets you upload investor CSVs, automatically generates smart email drafts tailored to your company, and highlights top potential investors using intelligent analysis",
     gradient: "from-[#D7E0CD] to-[#ADB7A3]",
     main: "#F0ECEB",
+    url: "https://86f.neuralarc.ai/",
   },
   {
     title: "86/P",
@@ -23,6 +25,7 @@ const cards = [
       "86/P helps teams plan, track, and execute work with to-do lists, admin task assignment, multi-user collaboration, and project overviews—plus built-in repo integration for easier code and task management.",
     gradient: "from-[#DCCAC1] to-[#B18D7B]",
     main: "#F3F4EF",
+    url: "https://86p.neuralarc.ai/",
   },
 ];
 
@@ -79,6 +82,15 @@ export default function InternalApp() {
             <div className="font-normal text-[1.1rem] leading-[1.7rem] text-black mb-2">
               {card.description}
             </div>
+            <a
+              href={card.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto px-8 py-3 bg-[#2F2C28] text-white rounded-lg font-medium text-lg shadow-[0_4px_0_0_#C6AEA3] border-b-[3px] border-b-[#C6AEA3] hover:-translate-y-1 transition-all flex items-center gap-2 w-fit"
+            >
+              View
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24v0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+            </a>
           </div>
         </div>
       ))}

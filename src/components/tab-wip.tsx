@@ -79,7 +79,7 @@ export default function TabWorkInProgress() {
         ))}
       </div>
       <div className="w-full flex flex-col gap-4 mt-8 sm:flex-row sm:gap-8 items-center justify-center mx-2">
-        <div className={`grid ${cards2.length === 2 ? 'grid-cols-2' : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3'} gap-6 w-full`}>
+        <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 w-full`}>
           {cards2.map((card) => (
             <div
               key={card.title}
