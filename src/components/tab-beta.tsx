@@ -49,6 +49,15 @@ const cards2 = [
     borderColor: "#95788F",
     url: "https://rovyk.com/",
   },
+  {
+    bg: "/cardsbg/cardbg-6.png",
+    title: "Spark",
+    subtitle: "AI for Effortless Posting",
+    description:
+      "Spark is your all-in-one AI content creator—fast, smart, and seamless. Write, design, and publish across platforms without ever leaving your flow.",
+    borderColor: "#93A383",
+    url: "https://spark.neuralpaths.ai",
+  },
 ];
 
 export default function TabBeta() {
